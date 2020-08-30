@@ -607,6 +607,32 @@
   \end{tabular*}%
 }
 
+
+% Define an environment for cventry
+\newenvironment{cvpublications}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+% Define an entry of cv information
+% Usage: \cvpublication{<name>}{<conference>}{<location>}{<date>}{<type>}
+\newcommand*{\cvpublication}[5]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} & \entrylocationstyle{#3} \\[-1mm]
+    \entrypositionstyle{#5 for #2} & \entrydatestyle{#4}
+    % \ifempty{#2#3}
+    %   {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    %   {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+    %   \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    % \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+%   \vspace{0.01mm}
+}
+
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
@@ -638,7 +664,7 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} R{1.5cm} L{\textwidth - 5cm} R{3cm}}
 }{%
     \end{tabular*}
   \end{center}
